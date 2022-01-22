@@ -9,6 +9,9 @@ import 'dotenv/config';
 import { Product } from './schemas/Products';
 import { CartItem } from './schemas/CartItem.ts';
 import { ProductImage } from './schemas/ProductImage';
+import { Order } from './schemas/Order';
+import { OrderItem } from './schemas/OrderItem';
+import { Role } from './schemas/Role';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
 import { extendGraphqlSchema } from './mutations';
@@ -60,6 +63,9 @@ export default withAuth(
       Product,
       ProductImage,
       CartItem,
+      Order,
+      OrderItem,
+      Role,
     }),
     extendGraphqlSchema,
     ui: {
