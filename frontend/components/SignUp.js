@@ -5,7 +5,7 @@ import Form from './styles/Form';
 import { CURRENT_USER_QUERY } from './User';
 import Error from './ErrorMessage';
 
-const SIGNUP_MUTATION = gql`
+export const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
     $email: String!
     $name: String!
@@ -34,7 +34,6 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await signup().catch(console.error);
-    console.log({ data, loading, error });
     resetForm();
   };
 
